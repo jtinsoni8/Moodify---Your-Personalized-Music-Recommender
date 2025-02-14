@@ -1,0 +1,466 @@
+/* Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+/* Theme Styles */
+body.light-mode {
+  background-color: #f5f5f5;
+  color: #333;
+}
+
+body.dark-mode {
+  background-color: #1a1a1a;
+  color: #fff;
+}
+
+/* Add these styles to your existing CSS file */
+
+.welcome-section {
+  text-align: center;
+  padding: 40px 20px;
+  margin: 20px 0;
+  background: linear-gradient(145deg, #1db954, #1ed760);
+  border-radius: 15px;
+  color: white;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.welcome-section h2 {
+  font-size: 2rem;
+  margin-bottom: 15px;
+}
+
+.welcome-section p {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+
+.welcome-section .suggestion {
+  font-size: 1rem;
+  opacity: 0.9;
+  margin-top: 20px;
+}
+
+.dark-mode .welcome-section {
+  background: linear-gradient(145deg, #1a1a1a, #2d2d2d);
+  border: 1px solid #1db954;
+}
+
+@media (max-width: 768px) {
+  .welcome-section h2 {
+      font-size: 1.8rem;
+  }
+
+  .welcome-section p {
+      font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .welcome-section {
+      padding: 30px 15px;
+  }
+
+  .welcome-section h2 {
+      font-size: 1.5rem;
+  }
+
+  .welcome-section p {
+      font-size: 1rem;
+  }
+}
+
+/* Container */
+.app-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Header Styles */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 0;
+  margin-bottom: 30px;
+}
+
+.logo h1 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  background: linear-gradient(45deg, #1db954, #1ed760);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.theme-toggle button {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  padding: 8px;
+  border-radius: 50%;
+  transition: background-color 0.3s;
+}
+
+.light-mode .theme-toggle button {
+  color: #333;
+}
+
+.dark-mode .theme-toggle button {
+  color: #fff;
+}
+
+/* Controls Styles */
+.controls {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 30px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.mood-dropdown {
+  padding: 12px 20px;
+  border-radius: 25px;
+  border: 2px solid #1db954;
+  font-size: 1rem;
+  outline: none;
+  cursor: pointer;
+  background-color: transparent;
+  min-width: 200px;
+}
+
+.dark-mode .mood-dropdown {
+  color: white;
+  background-color: #333;
+}
+
+.mood-dropdown option {
+  padding: 8px;
+  background-color: white;
+  color: #333;
+}
+
+.dark-mode .mood-dropdown option {
+  background-color: #333;
+  color: white;
+}
+
+.get-music-button {
+  padding: 12px 30px;
+  border-radius: 25px;
+  border: none;
+  background-color: #1db954;
+  color: white;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.get-music-button:hover {
+  background-color: #1ed760;
+}
+
+/* Music Grid */
+.music-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+  padding: 20px 0;
+}
+
+/* Music Card */
+.music-card {
+  border-radius: 10px;
+  overflow: hidden;
+  transition: transform 0.3s, box-shadow 0.3s;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.light-mode .music-card {
+  background-color: white;
+}
+
+.dark-mode .music-card {
+  background-color: #2d2d2d;
+}
+
+.music-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.thumbnail-container {
+  position: relative;
+  width: 100%;
+  padding-top: 56.25%; /* 16:9 Aspect Ratio */
+}
+
+.thumbnail {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.card-content {
+  padding: 15px;
+}
+
+.video-title {
+  font-size: 1.1rem;
+  margin-bottom: 8px;
+  font-weight: 600;
+  line-height: 1.4;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.channel-name {
+  font-size: 0.9rem;
+  color: #666;
+  margin-bottom: 15px;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.dark-mode .channel-name {
+  color: #aaa;
+}
+
+.watch-button {
+  display: inline-block;
+  padding: 8px 16px;
+  background-color: #ff0000;
+  color: white;
+  text-decoration: none;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  transition: background-color 0.3s;
+  text-align: center;
+}
+
+.watch-button:hover {
+  background-color: #cc0000;
+}
+
+/* Loading Spinner */
+.loading-spinner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px;
+}
+
+.spinner {
+  width: 50px;
+  height: 50px;
+  border: 5px solid #f3f3f3;
+  border-top: 5px solid #1db954;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+.hidden {
+  display: none;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Error Message */
+.error-message {
+  text-align: center;
+  padding: 20px;
+  color: #721c24;
+  background-color: #f8d7da;
+  border: 1px solid #f5c6cb;
+  border-radius: 5px;
+  margin: 20px 0;
+}
+
+.dark-mode .error-message {
+  color: #f8d7da;
+  background-color: #721c24;
+  border-color: #9b2631;
+}
+
+/* Load More Spinner */
+#load-more-spinner {
+  margin: 20px 0;
+}
+
+/* Smooth Scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .app-container {
+      padding: 15px;
+  }
+
+  .logo h1 {
+      font-size: 2rem;
+  }
+
+  .controls {
+      flex-direction: column;
+      align-items: stretch;
+  }
+
+  .mood-dropdown, 
+  .get-music-button {
+      width: 100%;
+      max-width: none;
+  }
+
+  .music-grid {
+      grid-template-columns: 1fr;
+      gap: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .logo h1 {
+      font-size: 1.8rem;
+  }
+
+  .mood-dropdown,
+  .get-music-button {
+      font-size: 0.9rem;
+      padding: 10px 15px;
+  }
+
+  .card-content {
+      padding: 12px;
+  }
+
+  .video-title {
+      font-size: 1rem;
+  }
+
+  .channel-name {
+      font-size: 0.85rem;
+  }
+}
+
+/* Add these styles to your existing CSS file */
+
+.filter-container {
+  display: flex;
+  gap: 10px;
+}
+
+.filter-dropdown {
+  padding: 12px 20px;
+  border-radius: 25px;
+  border: 2px solid #1db954;
+  font-size: 1rem;
+  outline: none;
+  cursor: pointer;
+  background-color: transparent;
+  min-width: 150px;
+}
+
+.dark-mode .filter-dropdown {
+  color: white;
+  background-color: #333;
+}
+
+.active-filters {
+  display: flex;
+  gap: 10px;
+  margin: 10px 0;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.filter-label {
+  color: #666;
+  font-weight: 500;
+}
+
+.dark-mode .filter-label {
+  color: #aaa;
+}
+
+.filter-tag {
+  background-color: #1db954;
+  color: white;
+  padding: 5px 15px;
+  border-radius: 15px;
+  font-size: 0.9rem;
+}
+
+.hidden {
+  display: none;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .filter-container {
+      width: 100%;
+  }
+
+  .filter-dropdown {
+      flex: 1;
+  }
+
+  .active-filters {
+      padding: 0 15px;
+  }
+}
+
+.section-title {
+  text-align: center;
+  font-size: 1.8rem;
+  font-weight: bold;
+  margin: 20px 0;
+  color: #1db954;
+}
+
+.dark-mode .section-title {
+  color: #1ed760;
+}
+
+.button-container {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.spotify-button {
+  display: block;
+  padding: 8px 16px;
+  background-color: #1DB954;
+  color: white;
+  text-decoration: none;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  transition: background-color 0.3s;
+  text-align: center;
+}
+
+.spotify-button:hover {
+  background-color: #169c46;
+}

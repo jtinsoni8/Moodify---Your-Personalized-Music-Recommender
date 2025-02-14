@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Moodify - Music Recommender</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- For ICO format -->
+    <link rel="icon" href="favicon_io/favicon.ico" type="image/x-icon">   
+</head>
+<body class="light-mode">
+    <div class="app-container">
+        <!-- Header Section -->
+        <header>
+            <div class="logo">
+                <h1>Moodify</h1>
+            </div>
+            <div class="theme-toggle">
+                <button id="theme-toggle-btn">
+                    <i class="fas fa-moon"></i>
+                </button>
+            </div>
+        </header>
+
+        <!-- Welcome Message -->
+        <div id="welcome-message" class="welcome-section">
+            <h2>Welcome to Moodify!</h2>
+            <p>Select your mood or category to discover amazing music.</p>
+            <p class="suggestion">Made with 💙 By Jatin...</p>
+        </div>
+
+        <!-- Controls Section -->
+        <div class="controls">
+            <select id="mood-select" class="mood-dropdown">
+                <option value="">Select Category</option>
+                <option value="new">New Releases</option>
+                <option value="trending">Trending Music</option>
+                <option value="happy">Happy</option>
+                <option value="sad">Sad</option>
+                <option value="party">Party</option>
+                <option value="chill">Chill</option>
+                <option value="bhajan">Bhajans</option>
+            </select>
+
+            <!-- Language Filter -->
+            <div id="language-filter" class="filter-container hidden">
+                <select id="language-select" class="filter-dropdown">
+                    <option value="all">All Languages</option>
+                    <option value="hindi">Hindi</option>
+                    <option value="punjabi">Punjabi</option>
+                    <option value="haryanvi">Haryanvi</option>
+                </select>
+            </div>
+
+            <button id="get-music-btn" class="get-music-button">Get Music</button>
+        </div>
+
+        <!-- Active Filters Display -->
+        <div id="active-filters" class="active-filters hidden">
+            <span class="filter-label">Active Filters:</span>
+            <span id="category-tag" class="filter-tag"></span>
+            <span id="language-tag" class="filter-tag"></span>
+        </div>
+
+        <!-- Loading Spinner -->
+        <div id="loading-spinner" class="loading-spinner hidden">
+            <div class="spinner"></div>
+        </div>
+
+        <!-- Music Grid -->
+        <div id="music-grid" class="music-grid"></div>
+        
+
+        <!-- Load More Spinner -->
+        <div id="load-more-spinner" class="loading-spinner hidden">
+            <div class="spinner"></div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
